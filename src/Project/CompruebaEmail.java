@@ -13,9 +13,15 @@ public class CompruebaEmail {
     
     public static boolean CheckChar(String s ,char c){
         boolean b = false;
+        int count = 0;
         for(int i=0; i<s.length(); i++){
             if( s.charAt(i) == c ){
                 b = true;
+                count++;
+            }
+            if(count > 1){
+                b = false;
+                break;
             }
         }
         return b;
